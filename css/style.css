@@ -1,0 +1,381 @@
+@font-face {
+  font-family: 'SteelTongs';
+  src: url('SteelTongs.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'SF Movie Poster Condensed';
+  src: url('SF Movie Poster Condensed.woff2') format('woff2');
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 85% sans-serif;
+  font-weight: 300;
+  background: #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: text-top;
+}
+
+#container {
+  color: #333;
+}
+
+#cover, #spine, #back {
+  padding: 1em;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+#cover {
+  background: #bcb8ad;
+  text-align: center;
+  transition: 0.5s background-color;
+}
+
+#tagline {
+  font: 900 1.5em 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+#logo {
+  margin: 3em 1em 0;
+}
+
+#logo > svg {
+  width: 100%;
+  height: auto;
+}
+
+#spine {
+  background: #222;
+}
+
+#volumes {
+  margin: 3em 0;
+}
+
+#volumes a {
+  display: block;
+  margin: 1em 0;
+  font: 1.2em 'Orbitron', sans-serif;
+  color: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#links > li {
+  display: block;
+  width: 7%;
+  height: auto;
+  margin: 0 0.5em;
+}
+#links > li:first-child {
+  margin-left: 0;
+}
+#links > li:last-child {
+  margin-right: 0;
+}
+
+
+#links > #title {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+#links > #title > img {
+  width: 50%;
+  height: auto;
+}
+
+#back {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  background: #2A2C2B;
+  color: #F5F5F0;
+  transition: 0.5s background-color;
+}
+
+
+.credits {
+  font: 3.0em SteelTongs;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.credits > li {
+  margin: 0 0.5em;
+  display: block;
+  line-height: 1;
+}
+
+.firstname,
+.surname {
+  display: block;
+}
+
+.firstname {
+  font-size: 0.65em;
+}
+.surname {
+  color: #DC3727;
+  margin-bottom: 0.5em;
+}
+
+
+.blurb {
+  margin: 1em;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.4em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.blurb .film, 
+.blurb .band {
+  color: #DC3727;
+  font-weight: 900;
+  font-size: 1.1em;
+}
+
+
+.end {
+  margin-top: 0.5em;
+  font: 3.5em "SF Movie Poster Condensed", sans-serif;
+  text-transform: uppercase;
+}
+.end > li {
+  margin: 0 0.15em;
+}
+
+.instrument {
+  font: 0.4em SteelTongs;
+  text-transform: uppercase;
+  text-align: right;
+  display: inline-block;
+  max-width: 2.9em;
+  line-height: 0.9;
+  margin-right: -3px;
+  vertical-align: baseline:
+}
+
+
+#logo .st0 {
+  opacity: 0;
+  fill: #FFFFFF;
+}
+#logo .star-top, #logo .star-bot {
+  fill: #E8E2D2;
+}
+#logo .centre-top, #logo .centre-bot {
+  fill: #989281;
+}
+#logo .letters {
+  fill: #2C281C;
+}
+
+#logo .letters {
+  opacity: 0;
+}
+#logo .star-top,
+#logo .centre-top {
+  transform: translate3d(0, 47px, 0);
+}
+#logo .star-bot,
+#logo .centre-bot {
+  transform: translate3d(0, -47px, 0);
+}
+
+#logo.reveal .star-top, 
+#logo.reveal .star-bot,
+#logo.reveal .centre-top,
+#logo.reveal .centre-bot {
+  transition: 0.3s transform linear 1.0s;
+  transform: translate3d(0, 0px, 0);
+}
+#logo.reveal .centre-top,
+#logo.reveal .centre-bot {
+  animation: light-centre ease-out 0.5s;
+  animation-iteration-count: 2;
+}
+#logo.reveal .letters {
+  transition: 0.5s opacity ease-out;
+  opacity: 1;
+  animation: light-letters ease 0.8s;
+}
+#logo.reveal .letters:nth-child(1) {
+  transition-delay: 1.45s;
+  animation-delay: 1.8s;
+}
+#logo.reveal .letters:nth-child(2) {
+  transition-delay: 1.4s;
+  animation-delay: 1.7s;
+}
+#logo.reveal .letters:nth-child(3) {
+  transition-delay: 1.35s;
+  animation-delay: 1.6s;
+}
+#logo.reveal .letters:nth-child(4) {
+  transition-delay: 1.3s;
+  animation-delay: 1.5s;
+}
+#logo.reveal .letters:nth-child(5) {
+  transition-delay: 1.35s;
+  animation-delay: 1.6s;
+}
+#logo.reveal .letters:nth-child(6) {
+  transition-delay: 1.4s;
+  animation-delay: 1.7s;
+}
+#logo.reveal .letters:nth-child(7) {
+  transition-delay: 1.45s;
+  animation-delay: 1.8s;
+}
+
+@-webkit-keyframes light-centre {
+  0% { fill: #989281; }
+  50% { fill: #FFFFFF; }
+  100% { fill: #989281; }
+}
+
+@keyframes light-centre {
+  0% { fill: #989281; }
+  50% { fill: #FFFFFF; }
+  100% { fill: #989281; }
+}
+
+@-webkit-keyframes light-letters {
+  0% { fill: #2C281C; }
+  50% { fill: #FFFFFF; }  
+  100% { fill: #2C281C; }
+}
+
+@keyframes light-letters {
+  0% { fill: #2C281C; }
+  50% { fill: #FFFFFF; }  
+  100% { fill: #2C281C; }
+}
+
+
+@media only screen and (orientation: portrait) {
+  .dvd-ratio {
+    height: auto;
+    min-height: 140vw;
+  }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  #container {
+    font-size: 0.85em;
+  }
+}
+
+@media only screen and (orientation: landscape) {  
+  #container > div {
+    overflow: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    min-height: 67vw;
+  }
+  
+  .dvd-ratio {
+    width: 47vw;
+    min-height: 100vh;
+  }
+  
+  #spine {
+    width: 6vw;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+  }
+  
+  #links {
+    min-height: 100vh;
+    flex-direction: column;
+    align-content: space-between;
+    margin: 0;
+    padding: 0.5em;
+  }
+  #links > li {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 0.5em 0;
+  }
+  #links > #title {
+    width: 500%;
+    display: flex;
+  }
+  #links > #title > img {
+    width: 100%;
+    transform: rotate(90deg);
+  }
+}
+
+@media only screen and (max-width: 1023px) and (orientation: landscape) {
+  .blurb {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 736px) and (orientation: landscape) {
+  body {
+    font-size: 64%;
+  }
+}
+
+.vol1 #cover {
+  background-color: white;
+}
+
+.vol1 #logo .star-top, .vol1 #logo .star-bot {
+  fill: #333333;
+}
+
+.vol1 #logo .centre-top, .vol1 #logo .centre-bot {
+  fill: #555555;
+}
+
+.vol1 #back {
+  background-color: #222;
+  color: white;
+}
+
+
+.vol1 #volumes a[href='#vol1']::before,
+.vol1 #volumes a[href='#vol1']::after,
+.vol2 #volumes a[href='#vol2']::before,
+.vol2 #volumes a[href='#vol2']::after {
+  display: inline;
+  content: ' - '
+}
